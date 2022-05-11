@@ -1,10 +1,8 @@
-class Employe(
+open class Employe(
     val name: String,
     val cpf: String,
     val salary: Double
 ) {
 
-    fun bonus(): Double {
-        return salary * 0.1
-    }
+    open fun bonus(): Double = salary * 0.1
 }
