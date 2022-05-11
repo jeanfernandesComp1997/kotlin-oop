@@ -1,21 +1,17 @@
 fun main(args: Array<String>) {
     println("Welcome to Bytebank")
 
-    val accountJean = Account()
-    accountJean.holder = "Jean Fernandes"
-    accountJean.number = 1000
+    val accountJean = Account(holder = "Jean Fernandes", number = 1000)
     accountJean.deposit(200.0)
-    println(accountJean.holder)
-    println(accountJean.number)
-    println(accountJean.balance)
+    println("Holder: ${accountJean.holder}")
+    println("Account number: ${accountJean.number}")
+    println("Balance: ${accountJean.balance}")
 
-    val accountCarol = Account()
-    accountCarol.holder = "Ana Caroline"
-    accountCarol.number = 1001
+    val accountCarol = Account("Ana Caroline", 1001)
     accountCarol.deposit(300.0)
-    println(accountCarol.holder)
-    println(accountCarol.number)
-    println(accountCarol.balance)
+    println("Holder: ${accountCarol.holder}")
+    println("Account number: ${accountCarol.number}")
+    println("Balance: ${accountCarol.balance}")
 
     println("Depositing in the Jean's Account")
     accountJean.deposit(50.0)
@@ -48,15 +44,18 @@ fun main(args: Array<String>) {
     println("Carol balance ${accountCarol.balance}")
 }
 
-class Account {
+class Account(
+    var holder: String,
+    val number: Int
+) {
 
-    var holder = ""
-    var number = 0
     var balance = 0.0
         private set
 
     fun deposit(value: Double) {
-        balance += value
+        if (value > 0) {
+            balance += value
+        }
     }
 
     fun withDraw(value: Double) {
@@ -73,21 +72,7 @@ class Account {
 
         return false
     }
-
-//    fun getBalance(): Double {
-//        return balance
-//    }
 }
-
-//class Account(holder: String) {
-//
-//    var holder: String
-//        private set
-//
-//    init {
-//        this.holder = holder
-//    }
-//}
 
 fun testCopyAndReference() {
     val numberX = 10
@@ -97,8 +82,7 @@ fun testCopyAndReference() {
     println("Number X: $numberX")
     println("Number Y: $numberY")
 
-    val accountJohn = Account()
-    accountJohn.holder = "John"
+    val accountJohn = Account("John", 1003)
     var accountMary = accountJohn
     accountMary.holder = "Mary"
 
