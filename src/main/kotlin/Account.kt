@@ -1,10 +1,10 @@
-open class Account(
+abstract class Account(
     var holder: String,
     val number: Int
 ) {
 
     var balance = 0.0
-        private set
+        protected set
 
     fun deposit(value: Double) {
         if (value > 0) {
@@ -12,10 +12,7 @@ open class Account(
         }
     }
 
-    open fun withDraw(value: Double) {
-        if (balance >= value)
-            balance -= value
-    }
+    abstract fun withDraw(value: Double)
 
     fun transfer(value: Double, accountToTransfer: Account): Boolean {
         if (balance >= value) {

@@ -2,20 +2,14 @@ class Director(
     name: String,
     cpf: String,
     salary: Double,
-    val password: Int,
+    password: Int,
     val plr: Double
-) : Employe(
+) : EmployeAdmin(
     name = name,
     cpf = cpf,
-    salary = salary
+    salary = salary,
+    password = password
 ) {
 
-    override fun bonus(): Double = super.bonus() + salary + plr
-
-    fun login(password: Int): Boolean {
-        if (this.password == password) {
-            return true
-        }
-        return false
-    }
+    override fun bonus(): Double = salary + plr
 }

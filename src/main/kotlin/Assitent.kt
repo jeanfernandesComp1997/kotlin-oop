@@ -1,12 +1,12 @@
-class Analist(
+class Assitent(
     name: String,
     cpf: String,
-    salary: Double,
+    salary: Double
 ) : Employe(
     name = name,
     cpf = cpf,
     salary = salary
 ) {
 
-    override fun bonus(): Double = salary * 0.1
+    override fun bonus(): Double = salary * 0.5
 }

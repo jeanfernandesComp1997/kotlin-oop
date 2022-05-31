@@ -6,4 +6,10 @@ class SavingsAccount(
     number
 ) {
 
+    override fun withDraw(value: Double) {
+        if (this.balance >= value) {
+            this.balance -= value
+        }
+    }
+
 }

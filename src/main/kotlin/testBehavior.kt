@@ -1,9 +1,9 @@
 fun testBehavior() {
-    val accountJean = Account(holder = "Jean Fernandes", number = 1000)
+    val accountJean = CheckingAccount(holder = "Jean Fernandes", number = 1000)
     accountJean.deposit(200.0)
     accountJean.printAccount()
 
-    val accountCarol = Account("Ana Caroline", 1001)
+    val accountCarol = SavingsAccount("Ana Caroline", 1001)
     accountCarol.deposit(300.0)
     accountCarol.printAccount()
 

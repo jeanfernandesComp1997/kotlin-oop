@@ -7,6 +7,8 @@ class CheckingAccount(
 ) {
     override fun withDraw(value: Double) {
         val valueWithTax = value + 0.1
-        super.withDraw(valueWithTax)
+        if (this.balance >= valueWithTax) {
+            this.balance -= valueWithTax
+        }
     }
 }

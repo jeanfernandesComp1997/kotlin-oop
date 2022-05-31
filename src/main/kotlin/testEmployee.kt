@@ -1,5 +1,5 @@
 fun testEmployee() {
-    val employe = Employe(
+    val employe = Analist(
         name = "Jean",
         cpf = "105.564.347.87",
         salary = 1000.0
