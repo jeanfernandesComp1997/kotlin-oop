@@ -1,4 +1,4 @@
-class Account(
+open class Account(
     var holder: String,
     val number: Int
 ) {
@@ -12,7 +12,7 @@ class Account(
         }
     }
 
-    fun withDraw(value: Double) {
+    open fun withDraw(value: Double) {
         if (balance >= value)
             balance -= value
     }

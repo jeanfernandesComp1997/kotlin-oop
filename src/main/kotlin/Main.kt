@@ -1,58 +1,35 @@
 fun main(args: Array<String>) {
     println("Welcome to Bytebank")
 
-    val employe = Employe(
-        name = "Jean",
-        cpf = "105.564.347.87",
-        salary = 1000.0
+    val checkingAccount = CheckingAccount(
+        holder = "Jean",
+        number = 1000
     )
 
-    println("Name: ${employe.name}")
-    println("Cpf: ${employe.cpf}")
-    println("Salary: ${employe.salary}")
-    println("Bonus: ${employe.bonus()}")
-
-    val manager = Manager(
-        name = "Carol",
-        cpf = "222.222.222-22",
-        salary = 2000.0,
-        password = 1234
-    )
-    println("name ${manager.name}")
-    println("cpf ${manager.cpf}")
-    println("salary ${manager.salary}")
-    println("bonus ${manager.bonus()}")
-
-    if (manager.login(1234)) {
-        println("Sucessfuly authenticate")
-    } else {
-        println("Authentication failed")
-    }
-
-    val director = Director(
-        name = "Gabriel",
-        cpf = "333.333.333-33",
-        salary = 4000.0,
-        password = 4000,
-        plr = 200.0
+    val savingsAccount = SavingsAccount(
+        holder = "Carol",
+        number = 1001
     )
 
-    println("name ${director.name}")
-    println("cpf ${director.cpf}")
-    println("salary ${director.salary}")
-    println("bonus ${director.bonus()}")
-    println("plr ${director.plr}")
+    checkingAccount.deposit(1000.0)
+    savingsAccount.deposit(1000.0)
 
-    if (director.login(4000)) {
-        println("Sucessfuly authenticate")
-    } else {
-        println("Authentication failed")
-    }
+    println("Balance checking: ${checkingAccount.balance}")
+    println("Balance savings: ${savingsAccount.balance}")
 
-    val calculator = BonusCalculator()
-    calculator.register(employe)
-    calculator.register(manager)
-    calculator.register(director)
+    checkingAccount.withDraw(100.0)
+    savingsAccount.withDraw(100.0)
 
-    println("Total bonus: ${calculator.total}")
+    println("Balance checking after withdraw: ${checkingAccount.balance}")
+    println("Balance savings after withdraw: ${savingsAccount.balance}")
+
+    checkingAccount.transfer(100.0, savingsAccount)
+
+    println("Balance checking after transfer to savings: ${checkingAccount.balance}")
+    println("Balance savings after receive transfer: ${savingsAccount.balance}")
+
+    savingsAccount.transfer(100.0, checkingAccount)
+
+    println("Balance savings after transfer to checking: ${savingsAccount.balance}")
+    println("Balance checking after receive transfer: ${checkingAccount.balance}")
 }
