@@ -1,4 +1,4 @@
-package models
+package br.com.bytebank.models
 
 class Analist(
     name: String,

@@ -1,5 +1,5 @@
-import models.CheckingAccount
-import models.SavingsAccount
+import br.com.bytebank.models.CheckingAccount
+import br.com.bytebank.models.SavingsAccount
 
 fun testDiifAccounts() {
     val checkingAccount = CheckingAccount(

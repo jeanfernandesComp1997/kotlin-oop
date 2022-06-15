@@ -1,6 +1,6 @@
-package models
+package br.com.bytebank.models
 
-import models.Authenticable
+import br.com.bytebank.models.Authenticable
 
 class InternSystem {
 

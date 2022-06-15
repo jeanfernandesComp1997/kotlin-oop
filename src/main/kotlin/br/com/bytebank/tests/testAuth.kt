@@ -1,7 +1,7 @@
-import models.Client
-import models.Director
-import models.InternSystem
-import models.Manager
+import br.com.bytebank.models.Client
+import br.com.bytebank.models.Director
+import br.com.bytebank.models.InternSystem
+import br.com.bytebank.models.Manager
 
 fun testAuth() {
     val manager = Manager(

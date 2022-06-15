@@ -1,4 +1,4 @@
-package models
+package br.com.bytebank.models
 
 abstract class Account(
     var holder: String,

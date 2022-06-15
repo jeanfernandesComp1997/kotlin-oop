@@ -1,4 +1,4 @@
-import models.CheckingAccount
+import br.com.bytebank.models.CheckingAccount
 
 fun testCopyAndReference() {
     val numberX = 10

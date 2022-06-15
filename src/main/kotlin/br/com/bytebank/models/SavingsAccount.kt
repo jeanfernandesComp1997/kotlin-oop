@@ -1,6 +1,6 @@
-package models
+package br.com.bytebank.models
 
-import models.Account
+import br.com.bytebank.models.Account
 
 class SavingsAccount(
     holder: String,

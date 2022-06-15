@@ -1,7 +1,7 @@
-package models
+package br.com.bytebank.models
 
-import models.Authenticable
-import models.Employe
+import br.com.bytebank.models.Authenticable
+import br.com.bytebank.models.Employe
 
 abstract class EmployeAdmin(
     name: String,

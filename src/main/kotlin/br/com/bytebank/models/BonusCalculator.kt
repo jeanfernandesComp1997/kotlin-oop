@@ -1,6 +1,6 @@
-package models
+package br.com.bytebank.models
 
-import models.Employe
+import br.com.bytebank.models.Employe
 
 class BonusCalculator {
 
