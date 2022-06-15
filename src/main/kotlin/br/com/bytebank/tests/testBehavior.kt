@@ -1,12 +1,17 @@
+package br.com.bytebank.tests
+
 import br.com.bytebank.models.CheckingAccount
+import br.com.bytebank.models.Client
 import br.com.bytebank.models.SavingsAccount
 
 fun testBehavior() {
-    val accountJean = CheckingAccount(holder = "Jean Fernandes", number = 1000)
+    val clientJean = Client(name = "Jean Fernandes", cpf = "111-111-111-11", password = 1)
+    val accountJean = CheckingAccount(clientJean, number = 1000)
     accountJean.deposit(200.0)
     accountJean.printAccount()
 
-    val accountCarol = SavingsAccount("Ana Caroline", 1001)
+    val clientAna = Client(name = "Ana Caroline", cpf = "111-111-111-11", password = 1)
+    val accountCarol = SavingsAccount(clientAna, 1001)
     accountCarol.deposit(300.0)
     accountCarol.printAccount()
 

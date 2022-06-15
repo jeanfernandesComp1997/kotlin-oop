@@ -1,14 +1,19 @@
+package br.com.bytebank.tests
+
 import br.com.bytebank.models.CheckingAccount
+import br.com.bytebank.models.Client
 import br.com.bytebank.models.SavingsAccount
 
-fun testDiifAccounts() {
+fun testDiffAccounts() {
+    val clientJean = Client("Jean", "111.111.111-11", 1)
     val checkingAccount = CheckingAccount(
-        holder = "Jean",
+        holder = clientJean,
         number = 1000
     )
 
+    val clientCarol = Client("Carol", "222.222.222-22", 2)
     val savingsAccount = SavingsAccount(
-        holder = "Carol",
+        holder = clientCarol,
         number = 1001
     )
 

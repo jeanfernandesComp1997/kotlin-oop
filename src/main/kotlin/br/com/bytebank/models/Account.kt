@@ -1,7 +1,7 @@
 package br.com.bytebank.models
 
 abstract class Account(
-    var holder: String,
+    var holder: Client,
     val number: Int
 ) {
 

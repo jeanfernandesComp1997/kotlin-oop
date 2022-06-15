@@ -1,4 +1,7 @@
+package br.com.bytebank.tests
+
 import br.com.bytebank.models.CheckingAccount
+import br.com.bytebank.models.Client
 
 fun testCopyAndReference() {
     val numberX = 10
@@ -8,9 +11,12 @@ fun testCopyAndReference() {
     println("Number X: $numberX")
     println("Number Y: $numberY")
 
-    val accountJohn = CheckingAccount("John", 1003)
+    val clientJohn = Client("John", "111", 3)
+    val clientMary = Client("Mary", "222", 4)
+
+    val accountJohn = CheckingAccount(clientJohn, 1003)
     var accountMary = accountJohn
-    accountMary.holder = "Mary"
+    accountMary.holder = clientMary
 
     println("Holder account john: ${accountJohn.holder}")
     println("Holder account mary: ${accountMary.holder}")

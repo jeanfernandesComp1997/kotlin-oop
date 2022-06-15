@@ -1,3 +1,5 @@
+package br.com.bytebank.tests
+
 fun testIterators() {
     for (i in 1..5) {
         val holder = "Customer $i"

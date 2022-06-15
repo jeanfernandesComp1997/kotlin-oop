@@ -3,7 +3,7 @@ package br.com.bytebank.models
 import br.com.bytebank.models.Account
 
 class CheckingAccount(
-    holder: String,
+    holder: Client,
     number: Int
 ) : Account(
     holder,

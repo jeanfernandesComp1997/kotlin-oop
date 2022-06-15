@@ -1,8 +1,9 @@
+package br.com.bytebank.tests
+
 import br.com.bytebank.models.Analist
 import br.com.bytebank.models.BonusCalculator
 import br.com.bytebank.models.Director
 import br.com.bytebank.models.Manager
-import models.*
 
 fun testEmployee() {
     val employe = Analist(

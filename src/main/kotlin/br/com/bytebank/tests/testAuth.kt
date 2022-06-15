@@ -1,3 +1,5 @@
+package br.com.bytebank.tests
+
 import br.com.bytebank.models.Client
 import br.com.bytebank.models.Director
 import br.com.bytebank.models.InternSystem
