@@ -1,3 +1,6 @@
+import models.CheckingAccount
+import models.SavingsAccount
+
 fun testDiifAccounts() {
     val checkingAccount = CheckingAccount(
         holder = "Jean",

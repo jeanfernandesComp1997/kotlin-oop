@@ -1,3 +1,7 @@
+package models
+
+import models.Authenticable
+
 class InternSystem {
 
     fun enter(admin: Authenticable, password: Int) {

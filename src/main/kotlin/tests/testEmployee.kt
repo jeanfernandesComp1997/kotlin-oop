@@ -1,3 +1,8 @@
+import models.Analist
+import models.BonusCalculator
+import models.Director
+import models.Manager
+
 fun testEmployee() {
     val employe = Analist(
         name = "Jean",

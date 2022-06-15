@@ -1,3 +1,5 @@
+package models
+
 abstract class Account(
     var holder: String,
     val number: Int
@@ -26,7 +28,7 @@ abstract class Account(
 
     fun printAccount() {
         println("Holder: $holder")
-        println("Account number: $number")
+        println("models.Account number: $number")
         println("Balance: $balance")
         println()
     }

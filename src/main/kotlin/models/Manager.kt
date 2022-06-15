@@ -1,9 +1,12 @@
-class Director(
+package models
+
+import models.EmployeAdmin
+
+class Manager(
     name: String,
     cpf: String,
     salary: Double,
-    password: Int,
-    val plr: Double
+    password: Int
 ) : EmployeAdmin(
     name = name,
     cpf = cpf,
@@ -11,5 +14,5 @@ class Director(
     password = password
 ) {
 
-    override fun bonus(): Double = salary + plr
+    override fun bonus(): Double = salary
 }

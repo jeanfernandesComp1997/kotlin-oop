@@ -1,3 +1,8 @@
+import models.Client
+import models.Director
+import models.InternSystem
+import models.Manager
+
 fun testAuth() {
     val manager = Manager(
         "Jean",

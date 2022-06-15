@@ -1,3 +1,6 @@
+import models.CheckingAccount
+import models.SavingsAccount
+
 fun testBehavior() {
     val accountJean = CheckingAccount(holder = "Jean Fernandes", number = 1000)
     accountJean.deposit(200.0)
@@ -7,27 +10,27 @@ fun testBehavior() {
     accountCarol.deposit(300.0)
     accountCarol.printAccount()
 
-    println("Depositing in the Jean's Account")
+    println("Depositing in the Jean's models.Account")
     accountJean.deposit(50.0)
     println(accountJean.balance)
 
-    println("Depositing in the Carol's Account")
+    println("Depositing in the Carol's models.Account")
     accountCarol.deposit(100.0)
     println(accountCarol.balance)
 
-    println("Withdraw in the Jean's Account")
+    println("Withdraw in the Jean's models.Account")
     accountJean.withDraw(50.0)
     println(accountJean.balance)
 
-    println("Withdraw in the Carol's Account")
+    println("Withdraw in the Carol's models.Account")
     accountCarol.withDraw(25.0)
     println(accountCarol.balance)
 
-    println("Withdraw invalid value in the Carol's Account")
+    println("Withdraw invalid value in the Carol's models.Account")
     accountCarol.withDraw(1000.0)
     println(accountCarol.balance)
 
-    println("Transfering value from Carol's Account to Jean's Account")
+    println("Transfering value from Carol's models.Account to Jean's models.Account")
     if (accountCarol.transfer(100.0, accountJean)) {
         println("Successfully transfer")
     } else {

@@ -5,7 +5,7 @@ fun testIterators() {
         var balance = i + 10.0
 
         println("Holder: $holder")
-        println("Account Number: $accountNumber")
+        println("models.Account Number: $accountNumber")
         println("Balance: $balance")
         println()
     }
@@ -18,7 +18,7 @@ fun testIterators() {
         var balance = i + 10.0
 
         println("Holder: $holder")
-        println("Account Number: $accountNumber")
+        println("models.Account Number: $accountNumber")
         println("Balance: $balance")
         println()
 
@@ -34,7 +34,7 @@ fun testIterators() {
         var balance = i + 10.0
 
         println("Holder: $holder")
-        println("Account Number: $accountNumber")
+        println("models.Account Number: $accountNumber")
         println("Balance: $balance")
         println()
     }

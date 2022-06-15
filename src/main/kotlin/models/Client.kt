@@ -1,3 +1,7 @@
+package models
+
+import models.Authenticable
+
 class Client(
     val name: String,
     val cpf: String,

@@ -1,3 +1,5 @@
+package models
+
 abstract class Employe(
     val name: String,
     val cpf: String,

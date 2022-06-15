@@ -1,3 +1,7 @@
+package models
+
+import models.Employe
+
 class Assitent(
     name: String,
     cpf: String,

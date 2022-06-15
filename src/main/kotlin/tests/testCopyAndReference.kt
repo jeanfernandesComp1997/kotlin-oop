@@ -1,3 +1,5 @@
+import models.CheckingAccount
+
 fun testCopyAndReference() {
     val numberX = 10
     var numberY = numberX

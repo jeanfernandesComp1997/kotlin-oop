@@ -1,3 +1,7 @@
+package models
+
+import models.Account
+
 class CheckingAccount(
     holder: String,
     number: Int

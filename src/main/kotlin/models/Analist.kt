@@ -1,3 +1,5 @@
+package models
+
 class Analist(
     name: String,
     cpf: String,
