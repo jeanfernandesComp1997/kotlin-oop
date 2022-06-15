@@ -8,6 +8,15 @@ abstract class Account(
     var balance = 0.0
         protected set
 
+    companion object {
+        var total = 0
+            private set
+    }
+
+    init {
+        total++
+    }
+
     fun deposit(value: Double) {
         if (value > 0) {
             balance += value
