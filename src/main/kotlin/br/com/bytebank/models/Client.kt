@@ -1,11 +1,10 @@
 package br.com.bytebank.models
 
-import br.com.bytebank.models.Authenticable
-
 class Client(
     val name: String,
     val cpf: String,
-    val password: Int
+    private val password: Int,
+    var address: Address = Address(),
 ) : Authenticable {
 
     override fun login(password: Int): Boolean {

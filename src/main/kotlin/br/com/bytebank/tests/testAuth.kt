@@ -24,7 +24,7 @@ fun testAuth() {
     val client = Client(
         name = "Gabriel",
         cpf = "333.333.333-33",
-        password = 123454
+        password = 123454,
     )
 
     val system = InternSystem()
