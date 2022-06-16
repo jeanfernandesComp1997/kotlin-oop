@@ -1,10 +1,10 @@
 import br.com.bytebank.models.Address
 
 fun main(args: Array<String>) {
-    val address = Address()
-    val newAddress = Address()
+    val address = Address(cep = "37757-000")
+    val newAddress = Address(cep = "37757-000")
 
-    println(address.equals(address))
+    println(address.equals(newAddress))
 
     println(address.hashCode())
     println(newAddress.hashCode())
