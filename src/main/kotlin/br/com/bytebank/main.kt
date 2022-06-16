@@ -1,14 +1,16 @@
-import br.com.bytebank.models.Authenticable
-import br.com.bytebank.tests.testDiffAccounts
+import br.com.bytebank.models.Address
 
 fun main(args: Array<String>) {
-    val jean = object : Authenticable {
-        val name: String = "Jean"
-        val cpf: String = "111.111.111-11"
-        val password: Int = 1000
+    val address = Address()
+    val newAddress = Address()
 
-        override fun login(password: Int) = this.password == password
-    }
+    println(address.equals(address))
 
-    testDiffAccounts()
+    println(address.hashCode())
+    println(newAddress.hashCode())
+
+    println(address.toString())
+    println(newAddress.toString())
+
+    println("${address.javaClass}@${Integer.toHexString(address.hashCode())}")
 }

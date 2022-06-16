@@ -8,4 +8,16 @@ class Address(
     var state: String = "",
     var cep: String = "",
     var complement: String = ""
-)
+) {
+    override fun toString(): String {
+        return """
+            Address(street='$street', 
+            number=$number, 
+            neighborhood='$neighborhood', 
+            city='$city', 
+            state='$state', 
+            cep='$cep', 
+            complement='$complement')
+        """.trimIndent()
+    }
+}

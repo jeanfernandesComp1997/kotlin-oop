@@ -1,6 +1,6 @@
 package br.com.bytebank.models
 
-abstract class Employe(
+abstract class Employee(
     val name: String,
     val cpf: String,
     val salary: Double

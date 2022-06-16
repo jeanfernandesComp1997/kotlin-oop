@@ -1,12 +1,10 @@
 package br.com.bytebank.models
 
-import br.com.bytebank.models.Employe
-
 class Assitent(
     name: String,
     cpf: String,
     salary: Double
-) : Employe(
+) : Employee(
     name = name,
     cpf = cpf,
     salary = salary

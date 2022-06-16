@@ -1,14 +1,11 @@
 package br.com.bytebank.models
 
-import br.com.bytebank.models.Authenticable
-import br.com.bytebank.models.Employe
-
 abstract class EmployeAdmin(
     name: String,
     cpf: String,
     salary: Double,
     protected val password: Int
-) : Employe(
+) : Employee(
     name,
     cpf,
     salary

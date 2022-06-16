@@ -4,7 +4,7 @@ class Analist(
     name: String,
     cpf: String,
     salary: Double,
-) : Employe(
+) : Employee(
     name = name,
     cpf = cpf,
     salary = salary
