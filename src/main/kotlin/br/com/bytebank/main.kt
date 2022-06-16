@@ -1,16 +1,19 @@
-import br.com.bytebank.models.Address
+fun main() {
+    println("Init main")
+    function1()
+    println("End main")
+}
 
-fun main(args: Array<String>) {
-    val address = Address(cep = "37757-000")
-    val newAddress = Address(cep = "37757-000")
+fun function1() {
+    println("Init function1")
+    function2()
+    println("End function1")
+}
 
-    println(address.equals(newAddress))
-
-    println(address.hashCode())
-    println(newAddress.hashCode())
-
-    println(address.toString())
-    println(newAddress.toString())
-
-    println("${address.javaClass}@${Integer.toHexString(address.hashCode())}")
+fun function2() {
+    println("Init function2")
+    for (i in 1..5) {
+        println(i)
+    }
+    println("End function2")
 }
