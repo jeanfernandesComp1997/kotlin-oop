@@ -4,7 +4,24 @@ import br.com.bytebank.models.Address
 
 fun main() {
     println("Init main")
-    function1()
+    val input = "2.0"
+
+    val value = try {
+        input.toDouble()
+    } catch (ex: Exception) {
+        println(ex.printStackTrace())
+        null
+    }
+
+    val valueWithTax = if (value != null) {
+        value + 0.1
+    } else {
+        null
+    }
+
+    if (valueWithTax !== null) println("Value with tax: $valueWithTax") else println("Invalid value!")
+
+    // function1()
     println("End main")
 }
 
@@ -31,5 +48,6 @@ fun function2() {
         val address = Any()
         address as Address
     }
+
     println("End function2")
 }
