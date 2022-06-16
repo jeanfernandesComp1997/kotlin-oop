@@ -4,13 +4,6 @@ import br.com.bytebank.models.Address
 
 fun main() {
     println("Init main")
-
-    try {
-        10 / 0
-    } catch (ex: Exception) {
-        println("Error: $ex")
-    }
-
     function1()
     println("End main")
 }
@@ -21,9 +14,12 @@ fun function1() {
     try {
         function2()
     } catch (ex: Exception) {
-        println("Error: $ex")
         println("Instance of: ${ex.javaClass}")
+        println("Error message: ${ex.message}")
+        println("StackTrace: ${ex.printStackTrace()}")
+        println("Cause: ${ex.cause}")
     }
+
     println("End function1")
 }
 
