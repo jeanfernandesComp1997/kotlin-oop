@@ -15,31 +15,34 @@ fun testBehavior() {
     accountCarol.deposit(300.0)
     accountCarol.printAccount()
 
-    println("Depositing in the Jean's models.Account")
+    println("Depositing in the Jean's account")
     accountJean.deposit(50.0)
     println(accountJean.balance)
 
-    println("Depositing in the Carol's models.Account")
+    println("Depositing in the Carol's account")
     accountCarol.deposit(100.0)
     println(accountCarol.balance)
 
-    println("Withdraw in the Jean's models.Account")
+    println("Withdraw in the Jean's account")
     accountJean.withDraw(50.0)
     println(accountJean.balance)
 
-    println("Withdraw in the Carol's models.Account")
+    println("Withdraw in the Carol's account")
     accountCarol.withDraw(25.0)
     println(accountCarol.balance)
 
-    println("Withdraw invalid value in the Carol's models.Account")
+    println("Withdraw invalid value in the Carol's account")
     accountCarol.withDraw(1000.0)
     println(accountCarol.balance)
 
-    println("Transfering value from Carol's models.Account to Jean's models.Account")
-    if (accountCarol.transfer(100.0, accountJean)) {
+    println("Transfering value from Carol's account to Jean's account")
+
+    try {
+        accountCarol.transfer(100.0, accountJean)
         println("Successfully transfer")
-    } else {
-        println("Failed transfer")
+    } catch (ex: Exception) {
+        println("Failed transfer: ${ex.message}")
+        println(ex.printStackTrace())
     }
 
     println("Jean balance ${accountJean.balance}")

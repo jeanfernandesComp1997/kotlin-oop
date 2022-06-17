@@ -1,5 +1,7 @@
 package br.com.bytebank.models
 
+import br.com.bytebank.exceptions.InsufficientBalanceException
+
 abstract class Account(
     var holder: Client,
     val number: Int
@@ -25,18 +27,17 @@ abstract class Account(
 
     abstract fun withDraw(value: Double)
 
-    fun transfer(value: Double, accountToTransfer: Account): Boolean {
-        if (balance >= value) {
-            balance -= value
-            accountToTransfer.deposit(value)
-            return true
+    fun transfer(value: Double, accountToTransfer: Account) {
+        if (balance < value) {
+            throw InsufficientBalanceException()
         }
 
-        return false
+        balance -= value
+        accountToTransfer.deposit(value)
     }
 
     fun printAccount() {
-        println("Holder: $holder")
+        println("Holder: ${holder.name}")
         println("models.Account number: $number")
         println("Balance: $balance")
         println()

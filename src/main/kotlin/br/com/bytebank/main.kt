@@ -1,27 +1,14 @@
 package br.com.bytebank
 
-import br.com.bytebank.models.Address
+import br.com.bytebank.exceptions.InsufficientBalanceException
+import br.com.bytebank.tests.testBehavior
 
 fun main() {
     println("Init main")
-    val input = "2.0"
 
-    val value = try {
-        input.toDouble()
-    } catch (ex: Exception) {
-        println(ex.printStackTrace())
-        null
-    }
-
-    val valueWithTax = if (value != null) {
-        value + 0.1
-    } else {
-        null
-    }
-
-    if (valueWithTax !== null) println("Value with tax: $valueWithTax") else println("Invalid value!")
-
+    testBehavior()
     // function1()
+
     println("End main")
 }
 
@@ -46,8 +33,10 @@ fun function2() {
     for (i in 1..5) {
         println(i)
         val address = Any()
-        address as Address
+        throw InsufficientBalanceException() // address as Address
     }
 
     println("End function2")
 }
+
+
