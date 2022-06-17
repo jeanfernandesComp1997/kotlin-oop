@@ -42,7 +42,7 @@ fun testBehavior() {
         println("Successfully transfer")
     } catch (ex: Exception) {
         println("Failed transfer: ${ex.message}")
-        println(ex.printStackTrace())
+        ex.printStackTrace()
     }
 
     println("Jean balance ${accountJean.balance}")
