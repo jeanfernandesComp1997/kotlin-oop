@@ -38,7 +38,7 @@ fun testBehavior() {
     println("Transfering value from Carol's account to Jean's account")
 
     try {
-        accountCarol.transfer(100.0, accountJean)
+        accountCarol.transfer(100.0, accountJean, 11)
         println("Successfully transfer")
     } catch (ex: Exception) {
         println("Failed transfer: ${ex.message}")

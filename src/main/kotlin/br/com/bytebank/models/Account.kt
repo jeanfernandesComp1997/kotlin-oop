@@ -1,11 +1,12 @@
 package br.com.bytebank.models
 
+import br.com.bytebank.exceptions.AuthenticationFailedException
 import br.com.bytebank.exceptions.InsufficientBalanceException
 
 abstract class Account(
     var holder: Client,
     val number: Int
-) {
+) : Authenticable {
 
     var balance = 0.0
         protected set
@@ -19,6 +20,10 @@ abstract class Account(
         total++
     }
 
+    override fun login(password: Int): Boolean {
+        return holder.login(password)
+    }
+
     fun deposit(value: Double) {
         if (value > 0) {
             balance += value
@@ -27,9 +32,13 @@ abstract class Account(
 
     abstract fun withDraw(value: Double)
 
-    fun transfer(value: Double, accountToTransfer: Account) {
+    fun transfer(value: Double, accountToTransfer: Account, password: Int) {
         if (balance < value) {
             throw InsufficientBalanceException()
+        }
+
+        if (!login(password)) {
+            throw AuthenticationFailedException()
         }
 
         balance -= value

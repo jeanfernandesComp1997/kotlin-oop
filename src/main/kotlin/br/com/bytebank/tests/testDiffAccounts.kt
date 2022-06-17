@@ -29,12 +29,12 @@ fun testDiffAccounts() {
     println("Balance checking after withdraw: ${checkingAccount.balance}")
     println("Balance savings after withdraw: ${savingsAccount.balance}")
 
-    checkingAccount.transfer(100.0, savingsAccount)
+    checkingAccount.transfer(100.0, savingsAccount, 1)
 
     println("Balance checking after transfer to savings: ${checkingAccount.balance}")
     println("Balance savings after receive transfer: ${savingsAccount.balance}")
 
-    savingsAccount.transfer(100.0, checkingAccount)
+    savingsAccount.transfer(100.0, checkingAccount, 2)
 
     println("Balance savings after transfer to checking: ${savingsAccount.balance}")
     println("Balance checking after receive transfer: ${checkingAccount.balance}")
