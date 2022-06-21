@@ -1,6 +1,20 @@
 package br.com.bytebank
 
 fun main() {
+    testTypeFunctionReference()
+
+    val myLambdaFunction: () -> Unit = {
+        println("Execute with lambda")
+    }
+    println(myLambdaFunction())
+
+    val myAnonymousFunction: () -> Unit = fun() {
+        println("Execute anonymous")
+    }
+    println(myAnonymousFunction())
+}
+
+fun testTypeFunctionReference() {
     val myFunction: () -> Unit = ::test
     println(myFunction())
 
