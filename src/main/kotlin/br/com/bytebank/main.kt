@@ -4,15 +4,15 @@ fun main() {
     testTypeFunctionReference()
     testClassFunction()
 
-    val myLambdaFunction: () -> Unit = {
-        println("Execute with lambda")
+    val myLambdaFunction = { a: Int, b: Int ->
+        a + b
     }
-    println(myLambdaFunction())
+    println(myLambdaFunction(2, 3))
 
-    val myAnonymousFunction: () -> Unit = fun() {
-        println("Execute anonymous")
+    val myAnonymousFunction: (Int, Int) -> Int = fun(a: Int, b: Int): Int {
+        return a + b
     }
-    println(myAnonymousFunction())
+    println(myAnonymousFunction(6, 4))
 }
 
 fun testTypeFunctionReference() {
