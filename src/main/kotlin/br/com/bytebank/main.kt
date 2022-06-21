@@ -13,6 +13,24 @@ fun main() {
         return a + b
     }
     println(myAnonymousFunction(6, 4))
+
+    val bonusCalculator: (wage: Double) -> Double = lambda@{ wage ->
+        if (wage > 1000.0) {
+            return@lambda wage + 50
+        }
+
+        wage + 100.0
+    }
+    println(bonusCalculator(1100.0))
+
+    val bonusCalculatorAnonymous: (wage: Double) -> Double = fun(wage): Double {
+        if (wage > 1000.0) {
+            return wage + 50
+        }
+
+        return wage + 100.0
+    }
+    println(bonusCalculatorAnonymous(1100.0))
 }
 
 fun testTypeFunctionReference() {
