@@ -1,21 +1,21 @@
 package br.com.bytebank
 
-import br.com.bytebank.models.Address
-
 fun main() {
-    var address: Address? = null
-    println(address?.street?.length)
+    val myFunction: () -> Unit = ::test
+    println(myFunction())
 
-    address?.let { addressLambda: Address ->
-        println(addressLambda.street.length)
-    }
-
-    println(address?.street?.length ?: 0)
-
-    test(1)
+    val myFunctionClass: () -> Unit = Test()
+    println(myFunctionClass())
 }
 
-fun test(value: Any) {
-    val number: Int? = value as? Int
-    println(number)
+fun test() {
+    println("Execute test")
+}
+
+// fun sum(a: Int, b: Int): Int = a + b
+
+class Test : () -> Unit {
+    override fun invoke() {
+        println("Execute invoke")
+    }
 }
