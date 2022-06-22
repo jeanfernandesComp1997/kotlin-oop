@@ -48,4 +48,11 @@ class Address(
         result = 31 * result + complement.hashCode()
         return result
     }
+
+    fun completed(): String {
+        return """$street - $number, $neighborhood, $city - $state
+$cep
+$complement
+        """.trimIndent()
+    }
 }
